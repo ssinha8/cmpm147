@@ -38,15 +38,10 @@ function main() {
   };
   
   const template = ` My $sibling recently became a parent. I cannot overstate how terrifying their $child is. I was asked to be a $babysitter for $num hours. 
-  
   As soon as they left, chaos ensued. The baby, barely able to crawl, immediately enaged in $action, toppling an entire mound of books onto the floor. 
-  
-  I sighed, knowing I would have to $ride of the $child.
-  
+  I sighed, knowing I would have to $ride of the $child. 
   Minutes later, during what I thought was a calm moment, I turned around to see the second coming of $conqueror perched triumphantly on top of the couch, $screaming. 
-  
   How she got up there, I'll never know. As I cleaned up a trail of overturned toys, I caught a glimpse of my $face in a mirror smeared with sticky fingerprints. 
-  
   "This," I muttered to myself, "is why I'm not a parent."`;
   
   
