@@ -101,18 +101,18 @@ function mutateDesign(design, inspiration, rate) {
       shape.fill = mut(shape.fill, 0, 255, rate);
       shape.x = mut(shape.x, 0, width, rate);
       shape.y = mut(shape.y, 0, (3 * height) / 4, rate);
-      shape.w = mut(shape.w, 0, width / 2, rate);
-      shape.h = mut(shape.h, 0, width / 2, rate);
+      shape.w = mut(shape.w, 0, width / 16, rate);
+      shape.h = mut(shape.h, 0, width / 16, rate);
     }
   } else if (inspiration.name == "Fire") {
     for (let shape of design.fg) {
       shape.fill = mut(shape.fill, 0, 255, rate);
       shape.x1 = mut(shape.x1, width / 3, (2 * width) / 3, rate);
-      shape.y1 = mut(shape.y1, 0, height, rate);
-      shape.x2 = mut(shape.x2, width / 3, (2 * width) / 3, rate);
+      shape.y1 = mut(shape.y1, 0, height / 3, rate);
+      shape.x2 = mut(shape.x2, (7 * width) / 20, (13 * width) / 20, rate);
       shape.y2 = mut(shape.y2, 0, height, rate);
       shape.x3 = mut(shape.x3, width / 3, (2 * width) / 3, rate);
-      shape.y3 = mut(shape.y3, 0, height, rate);
+      shape.y3 = mut(shape.y3, 0, height / 3, rate);
     }
   }
 }
