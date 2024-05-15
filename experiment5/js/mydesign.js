@@ -25,7 +25,7 @@ function initDesign(inspiration) {
   resizeCanvas(inspiration.image.width / 2, inspiration.image.height / 2);
 
   let design = {
-    bg: 255,
+    bg: 128,
     fg: [],
   };
   if (inspiration.name == "Bubble") {
