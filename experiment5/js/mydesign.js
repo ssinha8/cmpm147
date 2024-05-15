@@ -29,32 +29,35 @@ function initDesign(inspiration) {
     fg: [],
   };
   if (inspiration.name == "Bubble") {
+    resizeCanvas(inspiration.image.width, inspiration.image.height);
     for (let i = 0; i < 1000; i++) {
       design.fg.push({
-        x: random(width),
-        y: random(height),
-        d: random(width / 2),
+        x: random(width / 3, (2 * width) / 3),
+        y: random(height / 3, (2 * height) / 3),
+        d: random(height / 2),
         fill: random(255),
       });
     }
   } else if (inspiration.name == "Hills") {
+    resizeCanvas(inspiration.image.width / 4, inspiration.image.height / 4);
     for (let i = 0; i < 1000; i++) {
       design.fg.push({
         x: random(width),
-        y: random(height),
+        y: random((3 * height) / 4),
         w: random(width / 2),
         h: random(height / 2),
         fill: random(255),
       });
     }
   } else if (inspiration.name == "Fire") {
+    resizeCanvas(inspiration.image.width / 2, inspiration.image.height / 2);
     for (let i = 0; i < 1000; i++) {
       design.fg.push({
-        x1: random(width),
+        x1: random(width / 3, (2 * width) / 3),
         y1: random(height),
-        x2: random(width),
+        x2: random(width / 3, (2 * width) / 3),
         y2: random(height),
-        x3: random(width),
+        x3: random(width / 3, (2 * width) / 3),
         y3: random(height),
         fill: random(255),
       });
