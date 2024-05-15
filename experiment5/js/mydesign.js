@@ -25,7 +25,7 @@ function initDesign(inspiration) {
   resizeCanvas(inspiration.image.width / 2, inspiration.image.height / 2);
 
   let design = {
-    bg: 128,
+    bg: 255,
     fg: [],
   };
   if (inspiration.name == "Bubble") {
@@ -92,26 +92,26 @@ function mutateDesign(design, inspiration, rate) {
   if (inspiration.name == "Bubble") {
     for (let shape of design.fg) {
       shape.fill = mut(shape.fill, 0, 255, rate);
-      shape.x = mut(shape.x, 0, width, rate);
-      shape.y = mut(shape.y, 0, height, rate);
-      shape.d = mut(shape.d, 0, width / 2, rate);
+      shape.x = mut(shape.x, width / 3, (2 * width) / 3, rate);
+      shape.y = mut(shape.y, height / 3, (2 * height) / 3, rate);
+      shape.d = mut(shape.d, 0, height / 2, rate);
     }
   } else if (inspiration.name == "Hills") {
     for (let shape of design.fg) {
       shape.fill = mut(shape.fill, 0, 255, rate);
       shape.x = mut(shape.x, 0, width, rate);
-      shape.y = mut(shape.y, 0, height, rate);
+      shape.y = mut(shape.y, 0, (3 * height) / 4, rate);
       shape.w = mut(shape.w, 0, width / 2, rate);
       shape.h = mut(shape.h, 0, width / 2, rate);
     }
   } else if (inspiration.name == "Fire") {
     for (let shape of design.fg) {
       shape.fill = mut(shape.fill, 0, 255, rate);
-      shape.x1 = mut(shape.x1, 0, width, rate);
+      shape.x1 = mut(shape.x1, width / 3, (2 * width) / 3, rate);
       shape.y1 = mut(shape.y1, 0, height, rate);
-      shape.x2 = mut(shape.x2, 0, width, rate);
+      shape.x2 = mut(shape.x2, width / 3, (2 * width) / 3, rate);
       shape.y2 = mut(shape.y2, 0, height, rate);
-      shape.x3 = mut(shape.x3, 0, width, rate);
+      shape.x3 = mut(shape.x3, width / 3, (2 * width) / 3, rate);
       shape.y3 = mut(shape.y3, 0, height, rate);
     }
   }
