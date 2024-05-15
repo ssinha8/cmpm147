@@ -43,7 +43,7 @@ function initDesign(inspiration) {
     for (let i = 0; i < 10000; i++) {
       design.fg.push({
         x: random(width),
-        y: random((3 * height) / 4),
+        y: random(height / 4, height),
         w: random(width / 16),
         h: random(height / 16),
         fill: random(255),
@@ -54,11 +54,11 @@ function initDesign(inspiration) {
     for (let i = 0; i < 10000; i++) {
       design.fg.push({
         x1: random(width / 3, (2 * width) / 3),
-        y1: random(height / 3),
-        x2: random((7 * width) / 20, (13 * width) / 20),
+        y1: random((2 * height) / 3, height),
+        x2: random((9 * width) / 20, (11 * width) / 20),
         y2: random(height),
         x3: random(width / 3, (2 * width) / 3),
-        y3: random(height / 3),
+        y3: random((2 * height) / 3, height),
         fill: random(255),
       });
     }
@@ -100,7 +100,7 @@ function mutateDesign(design, inspiration, rate) {
     for (let shape of design.fg) {
       shape.fill = mut(shape.fill, 0, 255, rate);
       shape.x = mut(shape.x, 0, width, rate);
-      shape.y = mut(shape.y, 0, (3 * height) / 4, rate);
+      shape.y = mut(shape.y, height / 4, height, rate);
       shape.w = mut(shape.w, 0, width / 16, rate);
       shape.h = mut(shape.h, 0, width / 16, rate);
     }
@@ -108,11 +108,11 @@ function mutateDesign(design, inspiration, rate) {
     for (let shape of design.fg) {
       shape.fill = mut(shape.fill, 0, 255, rate);
       shape.x1 = mut(shape.x1, width / 3, (2 * width) / 3, rate);
-      shape.y1 = mut(shape.y1, 0, height / 3, rate);
-      shape.x2 = mut(shape.x2, (7 * width) / 20, (13 * width) / 20, rate);
+      shape.y1 = mut(shape.y1, (2 * height) / 3, height, rate);
+      shape.x2 = mut(shape.x2, (9 * width) / 20, (11 * width) / 20, rate);
       shape.y2 = mut(shape.y2, 0, height, rate);
       shape.x3 = mut(shape.x3, width / 3, (2 * width) / 3, rate);
-      shape.y3 = mut(shape.y3, 0, height / 3, rate);
+      shape.y3 = mut(shape.y3, (2 * height) / 3, height, rate);
     }
   }
 }
