@@ -34,7 +34,7 @@ function initDesign(inspiration) {
       design.fg.push({
         x: random(width / 3, (2 * width) / 3),
         y: random(height / 3, (2 * height) / 3),
-        d: random(height / 8),
+        d: random(height / 16),
         fill: random(255),
       });
     }
@@ -94,7 +94,7 @@ function mutateDesign(design, inspiration, rate) {
       shape.fill = mut(shape.fill, 0, 255, rate);
       shape.x = mut(shape.x, width / 3, (2 * width) / 3, rate);
       shape.y = mut(shape.y, height / 3, (2 * height) / 3, rate);
-      shape.d = mut(shape.d, 0, height / 8, rate);
+      shape.d = mut(shape.d, 0, height / 16, rate);
     }
   } else if (inspiration.name == "Hills") {
     for (let shape of design.fg) {
