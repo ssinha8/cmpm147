@@ -30,7 +30,7 @@ function initDesign(inspiration) {
   };
   if (inspiration.name == "Bubble") {
     resizeCanvas(inspiration.image.width, inspiration.image.height);
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 5000; i++) {
       design.fg.push({
         x: random(width / 3, (2 * width) / 3),
         y: random(height / 3, (2 * height) / 3),
@@ -40,7 +40,7 @@ function initDesign(inspiration) {
     }
   } else if (inspiration.name == "Hills") {
     resizeCanvas(inspiration.image.width / 4, inspiration.image.height / 4);
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 5000; i++) {
       design.fg.push({
         x: random(width),
         y: random(height / 4, height),
@@ -51,7 +51,7 @@ function initDesign(inspiration) {
     }
   } else if (inspiration.name == "Fire") {
     resizeCanvas(inspiration.image.width / 2, inspiration.image.height / 2);
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 5000; i++) {
       design.fg.push({
         x1: random(width / 3, (2 * width) / 3),
         y1: random((2 * height) / 3, height),

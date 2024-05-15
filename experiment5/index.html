@@ -34,34 +34,6 @@
       <section>
         <h1>Experiment 5 - Evolutionary Impressions</h1>
 
-        <!-- <div class="minor-section">
-			<div id="canvas-container">
-				<select id="dropper"></select>
-				<button id="restart">
-					restart
-				</button>
-				<p>
-					Mutation rate (<span id="rate"></span>%):<br /><input
-						id="slider"
-						type="range"
-						min="1"
-						max="100"
-						value="100"
-					/>
-				</p>
-				<p id="active"></p>
-				<p>Active score: <span id="activeScore"></span></p>
-				<p>Exploration rate: <span id="fpsCounter"></span> fps</p>
-				<p id="best"></p>
-				<p>Best score: <span id="bestScore"></span></p>
-				<p id="memory" data-max-items="16"></p>
-				</div>
-		</div>
-			<div class="fullscreen-box">
-					<button id="fullscreen">Fullscreen</button>
-			</div>
-		</div> -->
-
         <div class="minor-section results">
           <div class="results-top">
             <div class="image-container">
@@ -106,27 +78,45 @@
 
         <div class="minor-section">
           <h2>Description</h2>
-          <p></p>
+          <p>
+            In this assignment, we designed a generator that takes an existing
+            image and renders shapes in an attempt to form a version of the
+            original image. It uses it's own evaluation score to try and
+            recreate the original image using the generated shapes.
+          </p>
         </div>
 
         <div class="minor-section">
           <h2>Technical</h2>
           <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              Using the dropwdown key, you can find three seperate images that
+              the generator attempts to replicate.
+            </li>
+            <li>
+              Each one will result in a completely different attempt from the
+              generator to replicate the image.
+            </li>
+            <li>
+              Using the 30 second annealing trick, (hopefully) you can see a
+              design similar to the image in question.
+            </li>
+            <li>
+              The mutation algorithm provided by Wes Modes makes incremental
+              design changes based on the mutation rate. So if you slide the
+              slider down to 0, the exploration should almost completely stop.
+            </li>
           </ol>
         </div>
 
         <div class="minor-section">
-          <h2>Annealing</h2>
-          <p></p>
-        </div>
-
-        <div class="minor-section">
           <h2>Reflection</h2>
-          <p></p>
+          <p>
+            I definitely rushed this assignment due to already being extremely
+            behind and late. The images being produced by my implementation of
+            this assignment are not what I'd like them to be. I will adjust
+            further in the future.
+          </p>
         </div>
       </section>
       <nav id="links" class="minor-section">
