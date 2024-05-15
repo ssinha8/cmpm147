@@ -22,21 +22,43 @@ function getInspirations() {
 }
 
 function initDesign(inspiration) {
-  resizeCanvas(inspiration.image.width / 4, inspiration.image.height / 4);
+  resizeCanvas(inspiration.image.width / 2, inspiration.image.height / 2);
 
   let design = {
     bg: 128,
     fg: [],
   };
-
-  for (let i = 0; i < 10; i++) {
-    design.fg.push({
-      x: random(width),
-      y: random(height),
-      w: random(width / 2),
-      h: random(height / 2),
-      fill: random(255),
-    });
+  if (inspiration.name == "Bubble") {
+    for (let i = 0; i < 1000; i++) {
+      design.fg.push({
+        x: random(width),
+        y: random(height),
+        d: random(width / 2),
+        fill: random(255),
+      });
+    }
+  } else if (inspiration.name == "Hills") {
+    for (let i = 0; i < 1000; i++) {
+      design.fg.push({
+        x: random(width),
+        y: random(height),
+        w: random(width / 2),
+        h: random(height / 2),
+        fill: random(255),
+      });
+    }
+  } else if (inspiration.name == "Fire") {
+    for (let i = 0; i < 1000; i++) {
+      design.fg.push({
+        x1: random(width),
+        y1: random(height),
+        x2: random(width),
+        y2: random(height),
+        x3: random(width),
+        y3: random(height),
+        fill: random(255),
+      });
+    }
   }
   return design;
 }
@@ -44,20 +66,51 @@ function initDesign(inspiration) {
 function renderDesign(design, inspiration) {
   background(design.bg);
   noStroke();
-  for (let box of design.fg) {
-    fill(box.fill, 128);
-    rect(box.x, box.y, box.w, box.h);
+  if (inspiration.name == "Bubble") {
+    for (let shape of design.fg) {
+      fill(shape.fill, 128);
+      circle(shape.x, shape.y, shape.d);
+    }
+  } else if (inspiration.name == "Hills") {
+    for (let shape of design.fg) {
+      fill(shape.fill, 128);
+      rect(shape.x, shape.y, shape.w, shape.h);
+    }
+  } else if (inspiration.name == "Fire") {
+    for (let shape of design.fg) {
+      fill(shape.fill, 128);
+      triangle(shape.x1, shape.y1, shape.x2, shape.y2, shape.x3, shape.y3);
+    }
   }
 }
 
 function mutateDesign(design, inspiration, rate) {
   design.bg = mut(design.bg, 0, 255, rate);
-  for (let box of design.fg) {
-    box.fill = mut(box.fill, 0, 255, rate);
-    box.x = mut(box.x, 0, width, rate);
-    box.y = mut(box.y, 0, height, rate);
-    box.w = mut(box.w, 0, width / 2, rate);
-    box.h = mut(box.h, 0, height / 2, rate);
+  if (inspiration.name == "Bubble") {
+    for (let shape of design.fg) {
+      shape.fill = mut(shape.fill, 0, 255, rate);
+      shape.x = mut(shape.x, 0, width, rate);
+      shape.y = mut(shape.y, 0, height, rate);
+      shape.d = mut(shape.d, 0, width / 2, rate);
+    }
+  } else if (inspiration.name == "Hills") {
+    for (let shape of design.fg) {
+      shape.fill = mut(shape.fill, 0, 255, rate);
+      shape.x = mut(shape.x, 0, width, rate);
+      shape.y = mut(shape.y, 0, height, rate);
+      shape.w = mut(shape.w, 0, width / 2, rate);
+      shape.h = mut(shape.h, 0, width / 2, rate);
+    }
+  } else if (inspiration.name == "Fire") {
+    for (let shape of design.fg) {
+      shape.fill = mut(shape.fill, 0, 255, rate);
+      shape.x1 = mut(shape.x1, 0, width, rate);
+      shape.y1 = mut(shape.y1, 0, height, rate);
+      shape.x2 = mut(shape.x2, 0, width, rate);
+      shape.y2 = mut(shape.y2, 0, height, rate);
+      shape.x3 = mut(shape.x3, 0, width, rate);
+      shape.y3 = mut(shape.y3, 0, height, rate);
+    }
   }
 }
 
