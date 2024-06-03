@@ -57,56 +57,37 @@
           <div class="minor-section">
             <h2>Description</h2>
             <p>
-              This project offers a generative, living impression of this
-              inspiring image:
-              <img src="./img/source.jpg" />
+              This project is a dungeon generator. It creates random dungeons
+              with hallways and sometimes treasure chests. There are water pits
+              that bubble and change based on millis().
             </p>
           </div>
         </div>
 
         <div class="minor-section">
           <h2>Technical</h2>
-          <p>Relation to inspring image:</p>
-          <ul>
-            <li>
-              Color: All colors were sampled from the inspiring image using the
-              eyedropper tool from Aseprite available on Steam.
-            </li>
-            <li>
-              Primitives: The sun is rendered with `circle` primitives. The
-              petals are rendered with `ellipse` primitives. The branches are
-              rendered with `quad` primitives.
-            </li>
-            <li>
-              Polygons: The mountain is a single polygon generated with calls to
-              `bezierVertex`. The tree trunk is also a single polygon generated
-              with calls to `bezierVertex`.
-            </li>
-            <li>
-              Composition: Different random seed values lead to differently
-              shaped mountains, sun positions, and differently positioned
-              branches and petal clusters.
-            </li>
-            <li>
-              Life: The perspective of the image acts as if you were standing
-              there and could slightly move right or left. The tree and its
-              branches move slightly in the direction of your mouse cursor. The
-              branches move as if they are affected by wind and the petals are
-              also flowing as if wind was influencing them.
-            </li>
-          </ul>
+          <p>
+            Autotiling: The waterpits, and floor of the dungeon were implemented
+            using autotiling meaning the tiles were chosen based on codes set by
+            determining what the orthogonal tiles were. So if a floor tile is
+            surrounded by non-floor tiles, it would have a code of 0. If it were
+            surrounded by floor tiles, it would have a code of 15. These codes
+            determine what tile is used for that text-code.
+          </p>
         </div>
 
         <div class="minor-section">
           <h2>Reflection</h2>
           <p>
-            While grinding through Experiment 2, I found myself becoming
-            immersed in smaller and smaller details. For example, my branches
-            are recursively generated which is definitely one of my best choices
-            for my design. I think it adds a lot of spice when hitting the
-            reimagine button. I'm hoping to continue working on the details of
-            this project to make it even more imaginative and active. I really
-            like the living portion of the impression and hope to add more.
+            While coding Experiment 3, I found myself becoming immersed in
+            smaller and smaller details. For example, my hallways are carefully
+            generated to avoid any possible grid codes that would not fit with
+            the tiles provided to retain its aesthetic. I also altered the
+            provided sub functions in order to create target lists to have
+            several different autotiling interactions between text-codes that I
+            may not want to exclude from one another. I'm hoping to continue
+            working on the details of this project to make it even more
+            imaginative and active.
           </p>
         </div>
       </section>

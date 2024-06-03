@@ -57,56 +57,37 @@
           <div class="minor-section">
             <h2>Description</h2>
             <p>
-              This project offers a generative, living impression of this
-              inspiring image:
-              <img src="./img/source.jpg" />
+              This project is an overworld generator. It creates random lakes
+              and groves of trees. Houses are randomly spawned and the water
+              shimmers using millis() to iterate through shimmering tiles.
             </p>
           </div>
         </div>
 
         <div class="minor-section">
           <h2>Technical</h2>
-          <p>Relation to inspring image:</p>
-          <ul>
-            <li>
-              Color: All colors were sampled from the inspiring image using the
-              eyedropper tool from Aseprite available on Steam.
-            </li>
-            <li>
-              Primitives: The sun is rendered with `circle` primitives. The
-              petals are rendered with `ellipse` primitives. The branches are
-              rendered with `quad` primitives.
-            </li>
-            <li>
-              Polygons: The mountain is a single polygon generated with calls to
-              `bezierVertex`. The tree trunk is also a single polygon generated
-              with calls to `bezierVertex`.
-            </li>
-            <li>
-              Composition: Different random seed values lead to differently
-              shaped mountains, sun positions, and differently positioned
-              branches and petal clusters.
-            </li>
-            <li>
-              Life: The perspective of the image acts as if you were standing
-              there and could slightly move right or left. The tree and its
-              branches move slightly in the direction of your mouse cursor. The
-              branches move as if they are affected by wind and the petals are
-              also flowing as if wind was influencing them.
-            </li>
-          </ul>
+          <p>
+            Autotiling: The lake and beach of the overworld were implemented
+            using autotiling meaning the tiles were chosen based on codes set by
+            determining what the orthogonal tiles were. So if a floor tile is
+            surrounded by non-floor tiles, it would have a code of 0. If it were
+            surrounded by floor tiles, it would have a code of 15. These codes
+            determine what tile is used for that text-code.
+          </p>
         </div>
 
         <div class="minor-section">
           <h2>Reflection</h2>
           <p>
-            While grinding through Experiment 2, I found myself becoming
-            immersed in smaller and smaller details. For example, my branches
-            are recursively generated which is definitely one of my best choices
-            for my design. I think it adds a lot of spice when hitting the
-            reimagine button. I'm hoping to continue working on the details of
-            this project to make it even more imaginative and active. I really
-            like the living portion of the impression and hope to add more.
+            While coding Experiment 3, I found myself becoming immersed in
+            smaller and smaller details. For example, my lakes are carefully
+            generated to mimic random natural formations and not basic shapes.
+            In order to do this, I set a bounding rectangular box and have a
+            random amount of 'explosions' that are ellipses happen within that
+            box. Any tiles that would fall within that ellipse become lake
+            tiles. I'm hoping to continue working on the details of this project
+            to make it even more imaginative and active such as adding a river
+            generation function.
           </p>
         </div>
       </section>
