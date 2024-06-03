@@ -54,10 +54,10 @@ function setup() {
   numCols = select("#asciiBox").attribute("rows") | 0;
   numRows = select("#asciiBox").attribute("cols") | 0;
 
-  createCanvas(16 * numCols, 16 * numRows).parent("canvas-container");
+  createCanvas(16 * numCols, 16 * numRows).parent("canvasContainer");
   select("canvas").elt.getContext("2d").imageSmoothingEnabled = false;
 
-  select("#clicker").mousePressed(reseed);
+  select("#reseedButton").mousePressed(reseed);
   select("#asciiBox").input(reparseGrid);
 
   reseed();

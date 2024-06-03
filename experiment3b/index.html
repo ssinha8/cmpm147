@@ -25,8 +25,9 @@
     <!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" defer></script>
     <!-- Use me for a p5.js project -->
-    <script type="text/javascript" src="./js/base.js" defer></script>
-    <script type="text/javascript" src="./js/sketch.js" defer></script>
+    <script type="text/javascript" src="./img/tileset.png" defer></script>
+    <script type="text/javascript" src="./js/p2_base.js" defer></script>
+    <script type="text/javascript" src="./js/p2_solution.js" defer></script>
   </head>
   <body>
     <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
@@ -36,29 +37,31 @@
 
         <div class="two-column">
           <div class="minor-section">
-            <div id="canvas-container">
-              <!-- canvas will be added here -->
-            </div>
-            <div class="text-box">
-              <button id="clicker">reimagine</button>
-            </div>
+            <button id="reseedButton">reseed</button>
+            <span id="seedReport"></span>
+            <hr />
+            <span id="canvasContainer" style="margin: 10px"></span>
+            <textarea
+              cols="30"
+              rows="30"
+              id="asciiBox"
+              style="
+                opacity: 0.5;
+                letter-spacing: 1ex;
+                width: 320px;
+                margin: 10px;
+                font-family: monospace;
+              "
+            ></textarea>
           </div>
           <div class="minor-section">
-            <div id="canvas-container2">
-              <!-- canvas will be added here -->
-            </div>
-            <div class="text-box">
-              <button id="clicker2">reimagine</button>
-            </div>
+            <h2>Description</h2>
+            <p>
+              This project offers a generative, living impression of this
+              inspiring image:
+              <img src="./img/source.jpg" />
+            </p>
           </div>
-        </div>
-        <div class="minor-section">
-          <h2>Description</h2>
-          <p>
-            This project offers a generative, living impression of this
-            inspiring image:
-            <img src="./img/source.jpg" />
-          </p>
         </div>
 
         <div class="minor-section">
